@@ -1,5 +1,5 @@
 //Hostname of ESP8266
-#define WIFI_HOSTNAME "GoodWeLogger"
+#define WIFI_HOSTNAME "SamilLogger"
 
 //Wifi SSID to connect to
 #define WIFI_SSID "<your wifi ssid>"
@@ -35,7 +35,7 @@
 #define PVOUTPUT_UPDATE_INTERVAL   5 * 60 * 1000
 
 //timezone offset in hours (amsterdam is +2 in summertime). Used for posting to pvoutput
-#define TIMEZONE 2
+#define TIMEZONE 0
 
 //rs485 receive pin
 #define RS485_RX D1

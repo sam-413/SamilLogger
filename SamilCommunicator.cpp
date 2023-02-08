@@ -11,9 +11,9 @@ void SamilCommunicator::start()
 {
 	auto settings = settingsManager->GetSettings();
 	//create the software serial on the custom pins so we can use the hardware serial for debug comms.
-	samilSerial = new SoftwareSerial(settings->RS485Rx, settings->RS485Tx, false, BufferSize); // (RX, TX. inverted, buffer)
+	samilSerial = new SoftwareSerial; // (RX, TX. inverted, buffer)
 	//start the software serial
-	samilSerial->begin(9600); //inverter fixed baud rate
+	samilSerial->begin(9600, SWSERIAL_8N1, settings->RS485Rx, settings->RS485Tx, false, BufferSize); //inverter fixed baud rate
 
 	//set the fixed part of our buffer
 	headerBuffer[0] = 0x55;
